@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3a10974391bc4cfa83edb46cfabd4ad9" Name="Diagram1">
+        <EntityTypeShape EntityType="dbOnlineStoreModel.tblCategory" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineStoreModel.tblOrder" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineStoreModel.tblProduct" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineStoreModel.tblUser" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="dbOnlineStoreModel.FK_tblProducts_tblCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineStoreModel.FK_tblOrder_tblProducts" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbOnlineStoreModel.user_invoices" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="dbOnlineStoreModel.vw_getallproducts" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="dbOnlineStoreModel.tblInvoice" Width="1.5" PointX="3.375" PointY="5.25" />
+        <EntityTypeShape EntityType="dbOnlineStoreModel.getallorder" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="dbOnlineStoreModel.getallorderuser" Width="1.5" PointX="2.75" PointY="8.75" />
+        <AssociationConnector Association="dbOnlineStoreModel.FK__tblInvoic__UserI__2A4B4B5E" />
+        <AssociationConnector Association="dbOnlineStoreModel.FK__tblOrder__Invoic__2D27B809" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
