@@ -88,3 +88,5 @@ D:\ShoppingCartMVC\ShoppingCartMVC\obj\Debug\ShoppingCartMVC.csproj.CoreCompileI
 D:\ShoppingCartMVC\ShoppingCartMVC\obj\Debug\ShoppingCartMVC.csproj.CopyComplete
 D:\ShoppingCartMVC\ShoppingCartMVC\obj\Debug\ShoppingCartMVC.dll
 D:\ShoppingCartMVC\ShoppingCartMVC\obj\Debug\ShoppingCartMVC.pdb
+D:\ShoppingCartMVC\ShoppingCartMVC\bin\EntityFramework.SqlServer.dll
+D:\ShoppingCartMVC\ShoppingCartMVC\bin\EntityFramework.SqlServer.xml

@@ -58,9 +58,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="vw_getallproducts">
-      <EntityTypeMapping TypeName="dbOnlineStoreModel.vw_getallproducts">
-        <MappingFragment StoreEntitySet="vw_getallproducts">
+    <EntitySetMapping Name="getallproducts">
+      <EntityTypeMapping TypeName="dbOnlineStoreModel.getallproducts">
+        <MappingFragment StoreEntitySet="getallproducts">
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Unit" ColumnName="Unit" />
           <ScalarProperty Name="Description" ColumnName="Description" />

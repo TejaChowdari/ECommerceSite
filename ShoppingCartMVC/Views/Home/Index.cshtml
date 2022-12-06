@@ -8,10 +8,8 @@
         </div>
     </div>
     <script src="~/js/jquery.min.js"></script>
-
     <script>
-        $(document).ready(function () {
-          
+        $(document).ready(function () {          
             $("#searchBox").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
                 $("#result .col-md-6").filter(function () {
@@ -25,33 +23,19 @@
             <input type="text" class="form-control col-lg-4 ml-auto" placeholder="Search Here" id="searchBox" />
         </div>
         <div class="row" id="result">
-            @*<div>
-                <a href="@Url.Action("AddtoCart", "Home", new { id = @item.ProID })">Create Category </a>
-            </div>*@
-            @foreach (var item in Model)
-            {
-                @*<div style="width:30%">
-                    <ul>
-                        <li><a href="@Url.Action("Index", "Category")">All Categories </a></li>
-                        <li><a href="@Url.Action("Create", "Category")">Create Category </a></li>
-                        <li><a href="@Url.Action("Edit", "Category", new { id = item.CatId})">Edit Category</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="@Url.Action("Index", "Products")">All Products </a></li>
-                        <li><a href="@Url.Action("Create", "Products")">Create Products </a></li>
-                        <li><a href="@Url.Action("Edit", "Products", new { id = item.ProID})">Edit Products</a></li>
-                    </ul>
-                </div>*@
+           @foreach (var item in Model)
+            {               
                 <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
                     <div class="product">
                         <a href="@Url.Action("AddtoCart", "Home", new { id = @item.ProID })" class="img-prod">
-                            <img class="img-fluid" src="~/Uploads/@item.Image" style="height:250px" alt="Colorlib Template">
-                            <span class="status">30%</span>
-                            <div class="overlay"></div>
-                        </a>
+                            <img class="img-fluid" src="~/Uploads/@item.Image" style="height:250px;width:250px;" alt="Colorlib Template">
+                            @*<span class="status">30%</span>*@
+                            @*<div class="overlay"></div>*@
+                        </a>                        
                         <div class="text py-3 pb-4 px-3 text-center">
                             <h3><a href="@Url.Action("AddtoCart", "Home", new { id = @item.ProID })">@item.Name</a></h3>
                             <div class="d-flex">
+                                @*Offer Price*@
                                 <div class="pricing">
                                     <p class="price"><span class="mr-2 price-dc"><!--Rs.00--></span><span class="price-sale">Rs.@item.Unit</span></p>
                                 </div>

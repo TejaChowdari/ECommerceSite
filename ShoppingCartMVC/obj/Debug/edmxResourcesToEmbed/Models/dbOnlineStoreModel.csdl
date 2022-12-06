@@ -86,7 +86,7 @@
       <End Role="tblOrder" EntitySet="tblOrders" />
     </AssociationSet>
     <EntitySet Name="user_invoices" EntityType="dbOnlineStoreModel.user_invoices" />
-    <EntitySet Name="vw_getallproducts" EntityType="dbOnlineStoreModel.vw_getallproducts" />
+    <EntitySet Name="getallproducts" EntityType="dbOnlineStoreModel.getallproducts" />
     <EntitySet Name="tblInvoices" EntityType="dbOnlineStoreModel.tblInvoice" />
     <EntitySet Name="getallorders" EntityType="dbOnlineStoreModel.getallorder" />
     <EntitySet Name="getallorderusers" EntityType="dbOnlineStoreModel.getallorderuser" />
@@ -109,7 +109,7 @@
     <Property Name="Payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
   </EntityType>
-  <EntityType Name="vw_getallproducts">
+  <EntityType Name="getallproducts">
     <Key>
       <PropertyRef Name="ProID" />
     </Key>

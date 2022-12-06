@@ -16,29 +16,23 @@ namespace ShoppingCartMVC.Controllers
         readonly List<Cart> li = new List<Cart>();
 
         #region home page in showing all products 
-
         public ActionResult Index()
         {
-
             if (TempData["cart"] != null)
             {
                 int x = 0;
-
                 List<Cart> li2 = TempData["cart"] as List<Cart>;
                 foreach (var item in li2)
                 {
                     x += item.Bill;
-
                 }
                 TempData["total"] = x;
                 TempData["item_count"] = li2.Count();
             }
             TempData.Keep();
-
             var query = db.tblProducts.ToList();
             return View(query);
         }
-
         #endregion
 
         #region add to cart
@@ -61,24 +55,23 @@ namespace ShoppingCartMVC.Controllers
                 Qty = Convert.ToInt32(qty)
             };
             c.Bill = c.Price * c.Qty;
-           if (TempData["cart"] == null)
-           {
-               li.Add(c);
-               TempData["cart"] = li;
-           }
-           else
-           {
-               List<Cart> li2 = TempData["cart"] as List<Cart>;
-               int flag = 0;
-               foreach (var item in li2)
-               {
+            if (TempData["cart"] == null)
+            {
+                li.Add(c);
+                TempData["cart"] = li;
+            }
+            else
+            {
+                List<Cart> li2 = TempData["cart"] as List<Cart>;
+                int flag = 0;
+                foreach (var item in li2)
+                {
                    if (item.Proid == c.Proid)
                    {
                        item.Qty += c.Qty;
                        item.Bill += c.Bill;
                        flag = 1;
                    }
-
                }
                if (flag == 0)
                {
@@ -165,19 +158,15 @@ namespace ShoppingCartMVC.Controllers
         }
         #endregion
 
-
         #region all orders for admin 
-
         public ActionResult GetAllOrderDetail()
         {
             var query = db.getallorders.ToList();
             return View(query);
         }
-
         #endregion
 
         #region  confirm order by admin
-
         public ActionResult ConfirmOrder(int InvoiceId)
         {
             var query = db.getallorders.SingleOrDefault(m=>m.InvoiceId == InvoiceId);
@@ -196,50 +185,34 @@ namespace ShoppingCartMVC.Controllers
                 InvoiceDate = o.InvoiceDate,
                 Status = 1,
             };
-
-         
-          
-            db.Entry(inv).State = EntityState.Modified;
+            db.Entry(inv).State = (System.Data.Entity.EntityState)EntityState.Modified;
             db.SaveChanges();
-
-            return View();
-               
+            return View();               
         }
-
         #endregion
 
         #region orders for only user
-
         public ActionResult OrderDetail(int id)
         {
             var query = db.getallorderusers.Where(m => m.UserId == id).ToList();
             return View(query);
         }
-
-         #endregion
-
+        #endregion
 
         #region  get all users 
-
         public ActionResult GetAllUser()
         {
             var query = db.tblUsers.ToList();
             return View(query);
         }
-
         #endregion
 
-
-
         #region invoice for  user
-
         public ActionResult Invoice(int id)
         {
             var query = db.user_invoices.Where(m => m.InvoiceId == id).ToList();
             return View(query);
         }
-
         #endregion
-
     }
 }

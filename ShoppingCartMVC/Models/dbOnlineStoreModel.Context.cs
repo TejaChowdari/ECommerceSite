@@ -30,7 +30,7 @@ namespace ShoppingCartMVC.Models
         public DbSet<tblProduct> tblProducts { get; set; }
         public DbSet<tblUser> tblUsers { get; set; }
         public DbSet<user_invoices> user_invoices { get; set; }
-        public DbSet<vw_getallproducts> vw_getallproducts { get; set; }
+        public DbSet<getallproducts> getallproducts { get; set; }
         public DbSet<tblInvoice> tblInvoices { get; set; }
         public DbSet<getallorder> getallorders { get; set; }
         public DbSet<getallorderuser> getallorderusers { get; set; }

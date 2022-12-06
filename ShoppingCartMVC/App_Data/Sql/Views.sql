@@ -17,6 +17,11 @@ select tblInvoice.InvoiceId,  tblUser.Name as 'Customer',
 inner join tblUser on tblUser.UserId = tblInvoice.UserId
 where tblInvoice.UserId = ''
 
+create view getallproducts as
+select tblProducts.ProID, tblProducts.Name, tblCategories.Name as 'Category', tblProducts.Description, tblProducts.Unit, tblProducts.Image
+from tblProducts
+inner join tblCategories on tblCategories.CatId = tblProducts.CatId
+
 create view vw_getallproducts as
 select tblProducts.ProID, tblProducts.Name, tblCategories.Name as 'Category', tblProducts.Description, tblProducts.Unit, tblProducts.Image
 from tblProducts
@@ -25,9 +30,9 @@ inner join tblCategories on tblCategories.CatId = tblProducts.CatId
 select * from getallorders
 select * from getallorderusers
 select * from user_invoices
-select * from vw_getallproducts
+select * from getallproducts
 
 Drop view getallorders
 Drop view getallorderusers
 Drop view user_invoices
-Drop view vw_getallproducts
+Drop view getallproducts

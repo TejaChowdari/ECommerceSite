@@ -40,8 +40,17 @@
                                         @item.Price
                                     </td>
                                     <td class="quantity">
-                                       @* @Html.TextBoxFor("@item.Qty")*@
-                                        @item.Qty
+                                        @*@Html.TextBoxFor(@item.Qty)*@
+                                        @* @item.Qty*@
+                                        @* @Html.ActionLink("Add Another?", "AddToCart", "ShoppingCart", new { id = item.Proid }, new { @class = "btn btn-info" })*@
+                                        
+                                        
+                                        @*Updating Cart Starts*@
+
+
+                                        @*Updating cart End*@
+
+
                                     </td>
                                     <td class="total">
                                         Rs.@item.Bill
@@ -63,10 +72,10 @@
                 <div class="cart-total mb-3">
                     <h3>Cart Total</h3>
                     <hr>
-                        <p class="d-flex total-price">
-                            <span>Total</span>
-                            <span>Rs.@TempData["total"]</span>
-                        </p>
+                    <p class="d-flex total-price">
+                        <span>Total</span>
+                        <span>Rs.@TempData["total"]</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -80,6 +89,21 @@
     @if (User.Identity.IsAuthenticated)
     {
         if (User.IsInRole("2"))
+        {
+            if (TempData["cart"] != null)
+            {
+                using (Html.BeginForm())
+                {
+                    <span>Contact :</span> <input type="text" name="contact" class="form-control col-lg-6" />
+                    <span>Address :</span><textarea name="address" class="form-control col-lg-6"></textarea>
+                    <input type="submit" value="Checkout" class="btn btn-primary py-3 px-4" />
+                }
+            }
+        }
+    }
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("3"))
         {
             if (TempData["cart"] != null)
             {

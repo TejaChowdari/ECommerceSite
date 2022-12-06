@@ -1,4 +1,4 @@
-﻿Use dbOnlineStoreEntities
+﻿Use dbOnlineStore
 CREATE TABLE [dbo].[tblUser] (
     [UserId]   INT          IDENTITY (1, 1) NOT NULL,
     [Name]     VARCHAR (50) NULL,

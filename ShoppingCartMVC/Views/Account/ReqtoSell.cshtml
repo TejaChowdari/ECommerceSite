@@ -1,0 +1,21 @@
+﻿@model ShoppingCartMVC.Models.tblUser
+
+
+<style>
+    .ReqtoSell {
+        border-radius: 10px;
+        background-color: #46C7C7;
+        color: yellow;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    <br/><br/>
+    <div style="width:100%; text-align:center;">
+        <a href="@Url.Action("Index","Home")" class="nav-link">Welcome to @Session["User"]</a>
+        <hr />        
+        <input type="button" class="btn btn-info" value="Requesting to Sell" onclick="window.location= '@Url.Action( "Index", "Home")'" />
+        
+    </div>
+}

@@ -16,7 +16,7 @@ namespace ShoppingCartMVC.Controllers
 
         public ActionResult Index()
         {
-            var query = db.vw_getallproducts.ToList();
+            var query = db.getallproducts.ToList();
             return View(query);
         }
         #endregion
@@ -77,7 +77,7 @@ namespace ShoppingCartMVC.Controllers
                 p.Image = Image.FileName.ToString();
                 var folder = Server.MapPath("~/Uploads/");
                 Image.SaveAs(Path.Combine(folder, Image.FileName.ToString()));
-                db.Entry(p).State = EntityState.Modified;
+                db.Entry(p).State = (System.Data.Entity.EntityState)EntityState.Modified;
                 db.SaveChanges();
             }
             catch(Exception ex)

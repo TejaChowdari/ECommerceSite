@@ -11,7 +11,8 @@ namespace ShoppingCartMVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Net.NetworkInformation;
+
     public partial class tblUser
     {
         public tblUser()
@@ -24,7 +25,13 @@ namespace ShoppingCartMVC.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public Nullable<int> RoleType { get; set; }
-    
+        public int Mobile { get; set; }
+        public string DNo { get; set; }
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public int Pincode { get; set; }
+
         public virtual ICollection<tblInvoice> tblInvoices { get; set; }
     }
 }

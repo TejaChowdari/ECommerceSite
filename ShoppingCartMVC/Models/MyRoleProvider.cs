@@ -61,8 +61,7 @@ namespace ShoppingCartMVC.Models
             else
             {
                 throw new NotImplementedException();
-            }
-            
+            }            
         }
 
         public override string[] GetUsersInRole(string roleName)

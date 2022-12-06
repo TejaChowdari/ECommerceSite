@@ -12,7 +12,7 @@ namespace ShoppingCartMVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class vw_getallproducts
+    public partial class getallproducts
     {
         public int ProID { get; set; }
         public string Name { get; set; }

@@ -96,8 +96,8 @@ warning 6002: The table/view 'C:\USERS\DEVLAPTOP\DESKTOP\SHOPPINGCARTMVC\SHOPPIN
     <Property Name="InvoiceDate" Type="date" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\DEVLAPTOP\DESKTOP\SHOPPINGCARTMVC\SHOPPINGCARTMVC\SHOPPINGCARTMVC\APP_DATA\DBONLINESTORE.MDF.dbo.vw_getallproducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="vw_getallproducts">
+warning 6002: The table/view 'C:\USERS\DEVLAPTOP\DESKTOP\SHOPPINGCARTMVC\SHOPPINGCARTMVC\SHOPPINGCARTMVC\APP_DATA\DBONLINESTORE.MDF.dbo.getallproducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="getallproducts">
     <Key>
       <PropertyRef Name="ProID" />
     </Key>
@@ -193,15 +193,15 @@ FROM [dbo].[getallorderusers] AS [getallorderusers]</DefiningQuery>
 [user_invoices].[InvoiceDate] AS [InvoiceDate]
 FROM [dbo].[user_invoices] AS [user_invoices]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="vw_getallproducts" EntityType="Self.vw_getallproducts" store:Type="Views" store:Schema="dbo">
+    <EntitySet Name="getallproducts" EntityType="Self.getallproducts" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
-[vw_getallproducts].[ProID] AS [ProID], 
-[vw_getallproducts].[Name] AS [Name], 
-[vw_getallproducts].[Category] AS [Category], 
-[vw_getallproducts].[Description] AS [Description], 
-[vw_getallproducts].[Unit] AS [Unit], 
-[vw_getallproducts].[Image] AS [Image]
-FROM [dbo].[vw_getallproducts] AS [vw_getallproducts]</DefiningQuery>
+[getallproducts].[ProID] AS [ProID], 
+[getallproducts].[Name] AS [Name], 
+[getallproducts].[Category] AS [Category], 
+[getallproducts].[Description] AS [Description], 
+[getallproducts].[Unit] AS [Unit], 
+[getallproducts].[Image] AS [Image]
+FROM [dbo].[getallproducts] AS [getallproducts]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK__tblInvoic__UserI__2A4B4B5E" Association="Self.FK__tblInvoic__UserI__2A4B4B5E">
       <End Role="tblUser" EntitySet="tblUser" />

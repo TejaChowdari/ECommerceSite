@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Xml.Linq;
 using ShoppingCartMVC.Models;
 
 namespace ShoppingCartMVC.Controllers
@@ -13,7 +16,6 @@ namespace ShoppingCartMVC.Controllers
         readonly dbOnlineStoreEntities db = new dbOnlineStoreEntities();
 
         #region user registration 
-
         public ActionResult Register()
         {
             return View();
@@ -28,19 +30,24 @@ namespace ShoppingCartMVC.Controllers
                 u.Name = t.Name;
                 u.Email = t.Email;
                 u.Password = t.Password;
-                u.RoleType = 2;
+                u.RoleType = 3;
+                u.Mobile=t.Mobile;
+                u.DNo = t.DNo;
+                u.Street = t.Street;
+                u.City = t.City;
+                u.State = t.State;
+                u.Pincode=t.Pincode;
                 db.tblUsers.Add(u);
                 db.SaveChanges();
-
                 return RedirectToAction("Login", "Account");
             }
             else
             {
-                TempData["msg"] = "Not Register!!";
-            }
+                TempData["msg"] = "Already Registered!!";
+            }            
+
             return View();
         }
-
         #endregion
 
         #region user login
@@ -70,7 +77,13 @@ namespace ShoppingCartMVC.Controllers
                     Session["User"] = query.Name;
                     return RedirectToAction("Index", "Home");
                 }
-
+                else if(query.RoleType == 3)
+                {
+                    Session["uid"] = query.UserId;
+                    FormsAuthentication.SetAuthCookie(query.Email, false);
+                    Session["User"] = query.Name;
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
@@ -79,17 +92,30 @@ namespace ShoppingCartMVC.Controllers
 
             return View();
         }
-
-#endregion
+        #endregion
 
         #region logout 
-
         public ActionResult Signout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
-
         #endregion
+
+        #region Start ReqtoSell
+        public ActionResult ReqtoSell()
+        {
+            return View();
+        }
+        #endregion End ReqtoSell
+
+        #region Start ConfirmAsSeller
+        public ActionResult ConfirmAsSeller()
+        {
+
+            return View();
+        }
+        #endregion End ConfirmAsSeller
+
     }
 }

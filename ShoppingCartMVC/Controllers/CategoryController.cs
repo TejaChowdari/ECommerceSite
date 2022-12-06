@@ -13,19 +13,14 @@ namespace ShoppingCartMVC.Controllers
         readonly dbOnlineStoreEntities db = new dbOnlineStoreEntities();
 
         #region showing categories for admin
-
         public ActionResult Index()
         {
             var query = db.tblCategories.ToList();
-
             return View(query);
         }
-
         #endregion
 
-
         #region add categories
-
         public ActionResult Create()
         {
             return View();
@@ -65,11 +60,9 @@ namespace ShoppingCartMVC.Controllers
         public ActionResult Edit(tblCategory c)
         {
             try
-            {
-               
-                db.Entry(c).State = EntityState.Modified;
-                db.SaveChanges();
-               
+            {            
+                db.Entry(c).State = (System.Data.Entity.EntityState)EntityState.Modified;
+                db.SaveChanges();               
                 return RedirectToAction("Index");
             }
             catch(Exception ex)
@@ -78,23 +71,16 @@ namespace ShoppingCartMVC.Controllers
             }
             return RedirectToAction("Index");
         }
-
         #endregion
 
         #region delete category
-
         public ActionResult Delete(int id)
         {
             var query = db.tblCategories.SingleOrDefault(m => m.CatId == id);
             db.tblCategories.Remove(query);
             db.SaveChanges();
            return RedirectToAction("Index");
-        }
-
-      
-
+        }      
         #endregion
-
-
     }
 }
